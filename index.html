@@ -1,8 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Podcast Player</title>
   </head>
-  <body></body>
+  <body>
+    <div class="podcast-player">
+      <div id="artwork-container">
+        <img
+          id="artwork"
+          src="https://picsum.photos/200/300"
+          alt="Episode Artwork"
+        />
+      </div>
+      <audio id="audioPlayer" controls>
+        <source id="audioSource" src="podcast.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button id="playPauseBtn">Play</button>
+        <input type="range" id="seekBar" value="0" />
+        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+      </div>
+      <div class="playlist">
+        <div
+          class="episode"
+          onclick="loadEpisode('./podcast.mp3', 'episode1.jpg')"
+        >
+          Episode 1
+        </div>
+        <div
+          class="episode"
+          onclick="loadEpisode('./podcast2.mp3', 'episode2.jpg')"
+        >
+          Episode 2
+        </div>
+        <!-- Add more episodes as needed -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
